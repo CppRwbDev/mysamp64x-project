@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bac"
+>
+
+    <TextView
+        android:id="@+id/textViewWelcomePlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="Добро пожаловать!"
+        android:textColor="#2F3535"
+        android:textSize="12dp"
+        android:textStyle="bold"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
+    <TextView
+        android:id="@+id/textViewPlayerDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="Мы соскучились, давно тебя не было в игре!\nДавай скорей заходи."
+        android:textColor="@color/colorMainApp"
+        android:textSize="12dp"
+        android:textStyle="normal"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWelcomePlayer" />
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="Мониторинг"
+        android:textColor="#454445"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlayerDescription" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="О нас"
+        android:textColor="#454445"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutServerTwo" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="Новости проекта"
+        android:textColor="#454445"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewContactForm" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutServerOne"
+        android:layout_width="296dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bac_loading"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="275dp"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageViewIconOne"
+                android:layout_width="7dp"
+                android:layout_height="11dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewNameProjectOne"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectOne"
+                app:srcCompat="@drawable/icon_ellipse" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBarServerOne"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="198dp"
+                android:layout_height="10dp"
+                android:layout_marginBottom="6dp"
+                android:indeterminate="false"
+                android:indeterminateTint="#e2e2e2"
+                android:max="100"
+                android:minHeight="50dp"
+                android:minWidth="200dp"
+                android:padding="10dp"
+                android:progress="5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewServerOneCount"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNameRPOne"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textViewNameProjectOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="FLIN"
+                android:textColor="#404242"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textViewServerOne"
+                app:layout_constraintTop_toBottomOf="@+id/textViewServerOne" />
+
+            <TextView
+                android:id="@+id/textViewNameRPOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="Mobile"
+                android:textColor="#404242"
+                android:textSize="15dp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@+id/textViewNameProjectOne"
+                app:layout_constraintTop_toBottomOf="@+id/textViewServerOne" />
+
+            <TextView
+                android:id="@+id/textViewServerOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="#Server 1"
+                android:textColor="#ffbf00"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewServerOneCount"
+                android:layout_width="56dp"
+                android:layout_height="10dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="50/1000"
+                android:textColor="#454545"
+                android:textSize="9dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewIconOne"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectOne" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutServerTwo"
+        android:layout_width="296dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bac_loading"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutServerOne">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="275dp"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageViewIconTwo"
+                android:layout_width="7dp"
+                android:layout_height="11dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textViewNameProjectTwo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectTwo"
+                app:srcCompat="@drawable/icon_ellipse" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBarServerTwo"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="198dp"
+                android:layout_height="10dp"
+                android:layout_marginBottom="6dp"
+                android:indeterminate="false"
+                android:indeterminateTint="#e2e2e2"
+                android:max="100"
+                android:minHeight="50dp"
+                android:minWidth="200dp"
+                android:padding="10dp"
+                android:progress="26"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewServerTwoCount"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNameRPTwo"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textViewNameProjectTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="FLIN"
+                android:textColor="#404242"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/textViewServerTwo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewServerTwo" />
+
+            <TextView
+                android:id="@+id/textViewNameRPTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="Mobile"
+                android:textColor="#404242"
+                android:textSize="15dp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toEndOf="@+id/textViewNameProjectTwo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewServerTwo" />
+
+            <TextView
+                android:id="@+id/textViewServerTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="#Server 2"
+                android:textColor="#ffbf00"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewServerTwoCount"
+                android:layout_width="56dp"
+                android:layout_height="10dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/ttnorms"
+                android:text="260/1000"
+                android:textColor="#454545"
+                android:textSize="9dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewIconTwo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectTwo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="v4.0 (Build 23)"
+        android:textColor="#7c8080"
+        android:textSize="8dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewContactForm"
+        android:layout_width="281dp"
+        android:layout_height="88dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:srcCompat="@drawable/icon_contact" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="0dp"
+            android:scrollbars="none" />
+
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewContactForm"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal"></LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/i_menu"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_label_player" />
+
+    <Button
+        android:id="@+id/buttonShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Отправить логи"
+        android:visibility="gone"
+        android:textColor="@color/colorMain"
+        android:background="@drawable/change_drawable_click_list_mods"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewContactForm" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

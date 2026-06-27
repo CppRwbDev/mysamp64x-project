@@ -1,0 +1,12 @@
+{
+    "clientVersionCode": 11,
+    "gameFilesVersionCode": 100,
+    "URL_GAME_FILES" : "https://www.dropbox.com/scl/fi/m0osbng1haif9elb0w2z2/cache.zip?rlkey=l4jnqbgxg13ipvpl6zh88w5sy&st=iwdv7bm6&dl=1",
+    "URL_GAME_FILES_UPD" : "https://github.com/CppRwbDev/Cache_Gta_SAMPx64/releases/download/update_files/files_upd.zip",
+    "URL_VK": "https://t.me/turan_roleplay",
+    "URL_DISCORD": "https://t.me/turan_roleplay",
+    "URL_YOUTUBE": "https://t.me/turan_roleplay"
+    "URL_FORUM": "https://t.me/turan_roleplay",
+    "URL_DONATE": "https://t.me/turan_roleplay",
+    "URL_CLIENT": "https://github.com/TuranGame/turan-cache/releases/download/v1.1.1/client.apk"
+}

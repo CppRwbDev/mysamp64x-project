@@ -1,0 +1,530 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bhud_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/brp_hud_logo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/brp_hud_date"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toTopOf="@+id/brp_hud_date"
+        app:layout_constraintVertical_bias="0.25">
+
+        <ImageView
+            android:id="@+id/hud_star_1"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_2"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_3"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_4"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_star" />
+
+        <ImageView
+            android:id="@+id/hud_star_5"
+            android:layout_width="@dimen/_9sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_star" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="183dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082">
+
+        <LinearLayout
+            android:id="@+id/hud_ammo_layout"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_7sdp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView37"
+            app:layout_constraintTop_toBottomOf="@+id/hud_fist_icon">
+
+            <ImageView
+                android:id="@+id/hud_bullet"
+                android:layout_width="@dimen/_6sdp"
+                android:layout_height="fill_parent"
+                android:src="@drawable/ic_bullet" />
+
+            <TextView
+                android:id="@+id/hud_ammo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="0"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_5sdp" />
+
+            <TextView
+                android:id="@+id/hud_max_ammo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="/0"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_5sdp" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout6"
+            android:layout_width="59dp"
+            android:layout_height="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/hud_eat_pb"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hud_eat_pb">
+
+            <ImageView
+                android:layout_width="@dimen/_6sdp"
+                android:layout_height="@dimen/_6sdp"
+                android:src="@drawable/ic_wallet"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="$"
+                    android:textColor="#81FF03"
+                    android:textSize="@dimen/_6sdp" />
+
+                <TextView
+                    android:id="@+id/hud_balance_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_6sdp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.flin.online.gui.util.SeekArc
+            android:id="@+id/hud_health_pb"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_centerHorizontal="true"
+            android:padding="10dip"
+            app:arcColor="#424141"
+            app:arcWidth="@dimen/_5sdp"
+            app:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:max="100"
+            app:progress="50"
+            app:progressColor="@color/colorWarning"
+            app:progressWidth="@dimen/_4sdp"
+            app:rotation="180"
+            app:startAngle="180"
+            app:sweepAngle="360"
+            app:touchInside="true" />
+
+        <com.flin.online.gui.util.SeekArc
+            android:id="@+id/hud_armour_pb"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_centerHorizontal="true"
+            android:padding="10dip"
+            app:arcColor="#424141"
+            app:arcWidth="@dimen/_5sdp"
+
+            app:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.313"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:max="100"
+            app:progress="70"
+            app:progressColor="@color/common_action_bar_splitter"
+            app:progressWidth="@dimen/_4sdp"
+            app:rotation="180"
+            app:startAngle="180"
+            app:sweepAngle="360"
+            app:touchInside="true" />
+
+        <TextView
+            android:id="@+id/hud_armour_text"
+            android:layout_width="9dp"
+            android:layout_height="5dp"
+            android:fontFamily="@font/gothampro"
+            android:text="100"
+            android:textColor="@color/colorWhite"
+            android:textSize="4sp"
+            app:layout_constraintBottom_toBottomOf="@+id/hud_armour_pb"
+            app:layout_constraintEnd_toEndOf="@+id/hud_armour_pb"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="@+id/hud_armour_pb"
+            app:layout_constraintTop_toTopOf="@+id/hud_armour_pb"
+            app:layout_constraintVertical_bias="0.625" />
+
+        <TextView
+            android:id="@+id/hud_eat_text"
+            android:layout_width="9dp"
+            android:layout_height="5dp"
+            android:fontFamily="@font/gothampro"
+            android:text="100"
+            android:textColor="@color/colorWhite"
+            android:textSize="4sp"
+            app:layout_constraintBottom_toBottomOf="@+id/hud_eat_pb"
+            app:layout_constraintEnd_toEndOf="@+id/hud_eat_pb"
+            app:layout_constraintStart_toStartOf="@+id/hud_eat_pb"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15"
+            app:layout_constraintVertical_bias="0.07999998" />
+
+        <TextView
+            android:id="@+id/hud_health_text"
+            android:layout_width="9dp"
+            android:layout_height="5dp"
+            android:fontFamily="@font/gothampro"
+            android:text="100"
+            android:textColor="@color/colorWhite"
+            android:textSize="4sp"
+            app:layout_constraintBottom_toBottomOf="@+id/hud_health_pb"
+            app:layout_constraintEnd_toEndOf="@+id/hud_health_pb"
+            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintStart_toStartOf="@+id/hud_health_pb"
+            app:layout_constraintTop_toTopOf="@+id/hud_health_pb"
+            app:layout_constraintVertical_bias="0.615" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="6dp"
+            android:layout_height="7dp"
+            android:src="@drawable/ic_armor"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/hud_armour_pb"
+            app:layout_constraintEnd_toEndOf="@+id/hud_armour_pb"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="@+id/hud_armour_pb"
+            app:layout_constraintTop_toTopOf="@+id/hud_armour_pb"
+            app:layout_constraintVertical_bias="0.416" />
+
+        <com.flin.online.gui.util.SeekArc
+            android:id="@+id/hud_eat_pb"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
+            android:layout_centerHorizontal="true"
+            android:padding="10dip"
+            app:arcColor="#424141"
+            app:arcWidth="@dimen/_5sdp"
+            app:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.593"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:max="100"
+            app:progress="90"
+            app:progressColor="@color/colorPrimaryDark"
+            app:progressWidth="@dimen/_4sdp"
+            app:rotation="180"
+            app:startAngle="180"
+            app:sweepAngle="360"
+            app:touchInside="true" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            app:layout_constraintBottom_toBottomOf="@+id/hud_health_pb"
+            app:layout_constraintEnd_toEndOf="@+id/hud_health_pb"
+            app:layout_constraintStart_toStartOf="@+id/hud_health_pb"
+            app:layout_constraintTop_toTopOf="@+id/hud_health_pb"
+            app:layout_constraintVertical_bias="0.416"
+            app:srcCompat="@drawable/ic_heart" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:src="@drawable/ic_eat"
+            app:layout_constraintBottom_toBottomOf="@+id/hud_eat_pb"
+            app:layout_constraintEnd_toEndOf="@+id/hud_eat_pb"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="@+id/hud_eat_pb"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.41000003" />
+
+        <ImageView
+            android:id="@+id/imageView37"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toEndOf="@+id/hud_hunger"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/center_online_bac" />
+
+        <ImageView
+            android:id="@+id/hud_fist_icon"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:src="@drawable/weapon_0"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView37"
+            app:layout_constraintEnd_toEndOf="@+id/imageView37"
+            app:layout_constraintStart_toStartOf="@+id/imageView37"
+            app:layout_constraintTop_toTopOf="@+id/imageView37"
+            app:layout_constraintVertical_bias="0.391" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/brp_hud_logo"
+        android:layout_width="@dimen/_82sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:background="@drawable/hud_logo_bg"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/brp_hud_online"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/brp_hud_online"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:background="@drawable/flin_dialog_input_box_background"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:src="@drawable/ic_user"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/hud_online_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="0"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_6sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="/1000"
+                android:textColor="#40ffffff"
+                android:textSize="@dimen/_6sdp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TAB"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/brp_hud_date"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:background="@drawable/ic_btn_bg_2"
+        app:layout_constraintBottom_toBottomOf="@+id/brp_hud_time"
+        app:layout_constraintEnd_toStartOf="@+id/brp_hud_time"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toTopOf="@+id/brp_hud_time"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/hud_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:text="01.01.2021"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_6sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/brp_hud_time"
+        android:layout_width="@dimen/_27sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/ic_btn_bg_2"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733">
+
+        <TextView
+            android:id="@+id/hud_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gilroy_semibold"
+            android:text="00:00"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_6sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+        app:layout_constraintStart_toEndOf="@+id/toggleButton"
+        app:layout_constraintTop_toTopOf="@+id/toggleButton"
+        app:srcCompat="@drawable/b_alt" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/toggleButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/b_y" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/toggleButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/b_n" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/toggleButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/b_h" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="42dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="122dp"
+        android:background="@drawable/toggle"
+        android:checked="false"
+        android:text=" "
+        android:textOff=" "
+        android:textOn=" "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="56dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/widgetgetin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/spacing_large">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="320dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="6dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:gravity="center_vertical"
+                        android:text="Быстрый вход данных"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="@dimen/spacing_middle"
+                        android:background="@drawable/line_dash_grey_20" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="1dp"
+                        app:cardElevation="3dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <EditText
+                                android:id="@+id/editText_NickName"
+                                style="@style/EditText.Flat.Grey"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/spacing_xxlarge"
+                                android:inputType="text"
+                                android:background="@android:color/transparent"
+                                android:hint="Никнейм"
+                                android:minHeight="@dimen/spacing_xmlarge"
+                                android:paddingLeft="@dimen/spacing_large"
+                                android:paddingRight="@dimen/spacing_large" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey_5" />
+
+                            <EditText
+                                android:id="@+id/editText_Password"
+                                style="@style/EditText.Flat.Grey"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/spacing_xxlarge"
+                                android:inputType="textPassword"
+                                android:background="@android:color/transparent"
+                                android:hint="Основной пароль"
+                                android:minHeight="@dimen/spacing_xmlarge"
+                                android:paddingLeft="@dimen/spacing_large"
+                                android:paddingRight="@dimen/spacing_large" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey_5" />
+
+                            <EditText
+                                android:id="@+id/editText_AdmPassword"
+                                style="@style/EditText.Flat.Grey"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/spacing_xxlarge"
+                                android:inputType="textPassword"
+                                android:background="@android:color/transparent"
+                                android:hint="Пароль от админки"
+                                android:minHeight="@dimen/spacing_xmlarge"
+                                android:paddingLeft="@dimen/spacing_large"
+                                android:paddingRight="@dimen/spacing_large" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey_5" />
+
+                            <TextView
+                                android:id="@+id/textView39"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/ttnorms"
+                                android:text="Выберите сервер"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/grey_40"
+                                app:layout_constraintStart_toStartOf="parent"
+                           />
+
+                            <com.google.android.material.button.MaterialButtonToggleGroup
+                                android:id="@+id/toggleGroup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:checkedButton="@id/button1"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginStart="8dp"
+                                app:singleSelection="true">
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button1"
+                                    style="?attr/materialButtonOutlinedStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Первый"
+                                    android:textColor="@color/grey_40"
+                                    app:strokeWidth="1dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button2"
+                                    style="?attr/materialButtonOutlinedStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Второй"
+                                    android:textColor="@color/grey_40"
+                                    app:strokeWidth="1dp" />
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/button3"
+                                    style="?attr/materialButtonOutlinedStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/grey_40"
+                                    android:text="Тест"
+                                    app:strokeWidth="1dp" />
+
+                            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                            <com.balysv.materialripple.MaterialRippleLayout
+                                android:id="@+id/bt_create_account"
+                                style="@style/RippleStyleWhite"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/spacing_xxlarge"
+                                android:background="@color/colorPrimary">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Сохранить"
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                                    android:textColor="@android:color/white" />
+
+                            </com.balysv.materialripple.MaterialRippleLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_large"
+            app:backgroundTint="#4DFFFFFF"
+            app:elevation="0dp"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_close">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </LinearLayout>
+
+</RelativeLayout>

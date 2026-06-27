@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>app_version</key>
+        <value>25</value>
+    </entry>
+    <entry>
+        <key>checkFilesGame4</key>
+        <value>1</value>
+    </entry>
+    <entry>
+        <key>checkFilesPatchUpdateVersion</key>
+        <value>1</value>
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->

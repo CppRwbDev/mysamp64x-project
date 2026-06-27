@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/dialog_view_conts"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/dialog_linear_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="450dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bac_title"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/dialog_show_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ошибка!"
+                android:textColor="#FED605"
+                android:fontFamily="@font/gilroy"
+                android:singleLine="true"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonTestCloseDialog"
+                android:layout_width="26dp"
+                android:layout_height="21dp"
+                android:layout_marginEnd="16dp"
+                android:text="X"
+                android:fontFamily="@font/gilroybold"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/dialog_input_bac"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dialog_telo"
+            android:layout_width="450dp"
+            android:layout_height="220dp"
+            android:background="@drawable/bac_main"
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dialog_view_btn1"
+                    android:layout_width="100dp"
+                    android:layout_height="29dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/dialog_samp_btn1"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="350dp"
+                    tools:layout_editor_absoluteY="144dp">
+
+
+                    <TextView
+                        android:id="@+id/textViewBtnOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/gilroybold"
+                        android:gravity="center"
+                        android:text="Закрыть"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dialog_view_btn2"
+                    android:layout_width="100dp"
+                    android:layout_height="29dp"
+                    android:background="@drawable/dialog_samp_button"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="350dp"
+                    tools:layout_editor_absoluteY="144dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textViewBtnTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/gilroybold"
+                        android:gravity="center"
+                        android:text="Закрыть"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="3dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ListView
+                    android:id="@+id/dialog_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/textView_text_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gilroybold"
+                android:gravity="left"
+                android:scrollbars="vertical"
+                android:text="Ошибка подключения к интернету!\nПереключите на WiFi или на мобильные сети"
+                android:textColor="#FFFFFF"
+
+                android:textSize="14dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/dialog_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dialog_input"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/dialog_input_bac"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+
+                <TextView
+                    android:id="@+id/editTextTextPassword"
+                    android:layout_width="208dp"
+                    android:layout_height="19dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="Нажмите для ввода"
+                    android:inputType="textPassword"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

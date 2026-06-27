@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+package="com.flinc.core">
+
+<application
+    android:icon="@drawable/ic_launcher"
+    android:isGame="true"
+    android:label="@string/app_name"
+    android:logo="@drawable/adtlogo"
+    tools:ignore="MissingTvBanner">
+    <activity
+        android:name="com.flin.online.ListActivityServers"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppThemeServers" />
+    <activity
+        android:name="com.flin.online.NewsActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.MeniDown"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.Snap"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.getGPU"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.test"
+        android:screenOrientation="landscape"
+        android:theme="@style/AppTheme" />
+    <activity android:name="com.flin.online.WebView" />
+    <activity
+        android:name="com.flin.online.ReOpenInstallActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme">
+        <intent-filter>
+            <action android:name="com.flin.online.INSTALLGAME" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.flin.online.PushOpen"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data
+                android:host="donate"
+                android:scheme="flingame" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.flin.online.InstallAPKActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.ReUpdateClient"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.ReUpdateClientCop"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.WebDonateActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.CheckFilesActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppThemeServers" />
+    <activity
+        android:name="com.flin.online.DonateActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data
+                android:host="flin-rp.com"
+                android:path="/donate"
+                android:scheme="https" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.flin.online.ContactActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.SelectInstallClient"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.SelectMods"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.ModsInstall"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.ScrollingMods"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.SetingsActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="stateHidden" />
+    <activity
+        android:name="com.flin.online.IntallNickActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.LoadingGPU"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.MenuActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.LoadingApp"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.install.InstallClient"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.MainStart"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+    <activity
+        android:name="com.flin.online.MainActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+
+
+    <activity
+        android:name="com.flin.core.GTASA"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:label="@string/app_name"
+        android:launchMode="singleTask"
+        android:screenOrientation="landscape"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+        android:windowSoftInputMode="adjustNothing" />
+    <activity
+        android:name="com.flin.online.GTASA"
+        android:screenOrientation="landscape"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <meta-data
+        android:name="android.max_aspect"
+        android:value="2.1" />
+    <meta-data
+        android:name="com.yandex.metrica.push.default_notification_icon"
+        android:resource="@drawable/ic_launcher" />
+    <meta-data
+        android:name="io.sentry.dsn"
+        android:value="https://8cc6b2c838ad4f32b77bbfc4c76d3933@o953864.ingest.sentry.io/5902745" />
+    <!-- https://a9e5f9b2adb34e4389860fc082ca10cb@o1343812.ingest.sentry.io/6619118 -->
+    <receiver android:name="com.flin.online.SilentPushReceiver">
+        <intent-filter>
+
+            <!-- Receive silent push notifications. -->
+            <action android:name="${applicationId}.action.ymp.SILENT_PUSH_RECEIVE" />
+        </intent-filter>
+    </receiver>
+</application>
+
+<meta-data
+    android:name="ymp_firebase_default_app_id"
+    android:value="flin-rp" />
+
+<meta-data
+    android:name="ymp_gcm_default_sender_id"
+    android:value="number:765480805022" />
+
+<uses-feature android:glEsVersion="0x00020000" />
+
+<uses-feature
+    android:name="android.hardware.touchscreen"
+    android:required="false" />
+<uses-feature
+    android:name="android.software.leanback"
+    android:required="false" />
+
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="androidx.ads.identifier.provider.HIGH_PRIORITY" />
+
+</manifest>
+
+
+
+

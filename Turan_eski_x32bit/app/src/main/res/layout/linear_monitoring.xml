@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:id="@+id/linearLayoutServerTwo"
+            android:layout_width="296dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bac_loading"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutServerOne">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="275dp"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageViewIconTwo"
+                    android:layout_width="7dp"
+                    android:layout_height="11dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textViewNameProjectTwo"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectTwo"
+                    app:srcCompat="@drawable/icon_ellipse" />
+
+
+                <ProgressBar
+                    android:id="@+id/progressBarServerTwo"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="198dp"
+                    android:layout_height="10dp"
+                    android:layout_marginBottom="6dp"
+                    android:indeterminate="false"
+                    android:indeterminateTint="#e2e2e2"
+                    android:max="100"
+                    android:minHeight="50dp"
+                    android:minWidth="200dp"
+                    android:padding="10dp"
+                    android:progress="26"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textViewServerTwoCount"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewNameRPTwo"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textViewNameProjectTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/ttnorms"
+                    android:text="FLIN"
+                    android:textColor="#404242"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textViewServerTwo"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewServerTwo" />
+
+                <TextView
+                    android:id="@+id/textViewNameRPTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/ttnorms"
+                    android:text="Mobile"
+                    android:textColor="#404242"
+                    android:textSize="15dp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toEndOf="@+id/textViewNameProjectTwo"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewServerTwo" />
+
+                <TextView
+                    android:id="@+id/textViewServerTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/ttnorms"
+                    android:text="#Server 2"
+                    android:textColor="#ffbf00"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewServerTwoCount"
+                    android:layout_width="56dp"
+                    android:layout_height="10dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="1dp"
+                    android:fontFamily="@font/ttnorms"
+                    android:text="260/1000"
+                    android:textColor="#454545"
+                    android:textSize="9dp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewIconTwo"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectTwo" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

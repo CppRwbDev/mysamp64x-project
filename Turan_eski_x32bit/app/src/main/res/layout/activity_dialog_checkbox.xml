@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/ttnorms"
+            android:text="Запомнить выбор" />
+
+        <TextView
+            android:id="@+id/textViewWarning"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ttnorms"
+            android:gravity="center"
+            android:text="Приоритет загрузки можно будет изменить в настройках"
+            android:textColor="#7c8080"
+            android:textSize="11dp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            />
+    </LinearLayout>
+
+</FrameLayout>

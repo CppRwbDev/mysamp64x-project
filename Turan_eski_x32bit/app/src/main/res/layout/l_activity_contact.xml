@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bac"
+    tools:context=".SetingsActivity">
+
+    <TextView
+        android:id="@+id/textViewVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="v4.0 (Build 23)"
+        android:textColor="#7c8080"
+        android:textSize="8dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/ttnorms"
+        android:gravity="center"
+        android:text="О нас"
+        android:textColor="#404242"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/i_menu"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewIconYt"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewIconDiscord"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageViewIconDiscord"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIconDiscord"
+        app:srcCompat="@drawable/icon_yt" />
+
+    <ImageView
+        android:id="@+id/imageViewIconDiscord"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewIconSite"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageViewIconSite"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIconSite"
+        app:srcCompat="@drawable/icon_discord" />
+
+    <ImageView
+        android:id="@+id/imageViewIconForum"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewIconYt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageViewIconYt"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIconYt"
+        app:srcCompat="@drawable/icon_forum" />
+
+    <ImageView
+        android:id="@+id/imageViewIconTg"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:srcCompat="@drawable/icon_tg" />
+
+    <ImageView
+        android:id="@+id/imageViewIconVK"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewIconTg"
+        app:layout_constraintStart_toStartOf="@+id/imageViewIconTg"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIconTg"
+        app:srcCompat="@drawable/icon_vk" />
+
+    <ImageView
+        android:id="@+id/imageViewIconSite"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewIconTg"
+        app:layout_constraintStart_toStartOf="@+id/imageViewIconVK"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIconVK"
+        app:srcCompat="@drawable/icon_contact_site" />
+
+    <LinearLayout
+        android:id="@+id/dialog_error_connect_btn_close"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/dialog_samp_button"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewIconForum"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/textViewBtnTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/gilroybold"
+            android:gravity="center"
+            android:text="Отправить лог samp_log"
+            android:textColor="@color/colorMain"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_send_logcat"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/dialog_samp_button"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_error_connect_btn_close"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/textViewBtnTwo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/gilroybold"
+            android:gravity="center"
+            android:text="Отправить лог logcat"
+            android:textColor="@color/colorMain"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/dialog_send_crash"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/dialog_samp_button"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_send_logcat"
+        tools:ignore="MissingConstraints">
+
+
+        <TextView
+            android:id="@+id/textViewBtnTwo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/gilroybold"
+            android:gravity="center"
+            android:text="Отправить лог crash_log"
+            android:textColor="@color/colorMain"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

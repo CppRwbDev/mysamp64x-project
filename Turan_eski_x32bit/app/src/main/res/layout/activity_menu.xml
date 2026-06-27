@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.Material"
+    android:background="@drawable/bac">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Скопировать логи"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewContactForm"
+                app:layout_constraintStart_toStartOf="@+id/imageViewContactForm"
+                app:layout_constraintTop_toBottomOf="@+id/buttonNameSendTechVK"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textViewNameSendTechVK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:alpha="100"
+                android:fontFamily="@font/ttnorms"
+                android:rotationX="0"
+                android:text="Нашел ошибку?"
+                android:textColor="#404242"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/imageViewContactForm"
+                app:layout_constraintTop_toTopOf="@+id/button4" />
+
+            <ImageView
+                android:id="@+id/buttonNameSendTechVK"
+                android:layout_width="112dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNameSendTechVK"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewContactForm"
+                app:layout_constraintStart_toEndOf="@+id/textViewNameSendTechVK"
+                app:layout_constraintTop_toTopOf="@+id/textViewNameSendTechVK"
+                app:srcCompat="@drawable/btn_send_error" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нажми один раз"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Пусто"
+                android:textColor="@color/colorBlack"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewContactForm" />
+
+            <Button
+                android:id="@+id/buttonShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/change_drawable_click_list_mods"
+                android:text="Отправить логи"
+                android:textColor="@color/colorMain"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewContactForm" />
+
+
+            <ImageView
+                android:id="@+id/imageViewContactForm"
+                android:layout_width="281dp"
+                android:layout_height="88dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:srcCompat="@drawable/icon_contact" />
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_label_player" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutServerOne"
+                android:layout_width="296dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bac_loading"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="275dp"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewIconOne"
+                        android:layout_width="7dp"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewNameProjectOne"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectOne"
+                        app:srcCompat="@drawable/icon_ellipse" />
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBarServerOne"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="198dp"
+                        android:layout_height="10dp"
+                        android:layout_marginBottom="6dp"
+                        android:indeterminate="false"
+                        android:indeterminateTint="#e2e2e2"
+                        android:max="100"
+                        android:minWidth="200dp"
+                        android:minHeight="50dp"
+                        android:padding="10dp"
+                        android:progress="5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewServerOneCount"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNameRPOne" />
+
+                    <TextView
+                        android:id="@+id/textViewNameProjectOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="FLIN"
+                        android:textColor="#404242"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/textViewServerOne"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewServerOne" />
+
+                    <TextView
+                        android:id="@+id/textViewNameRPOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="Online"
+                        android:textColor="#404242"
+                        android:textSize="15dp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toEndOf="@+id/textViewNameProjectOne"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewServerOne" />
+
+                    <TextView
+                        android:id="@+id/textViewServerOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="#Server 1"
+                        android:textColor="#ffbf00"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewServerOneCount"
+                        android:layout_width="56dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="50/1000"
+                        android:textColor="#454545"
+                        android:textSize="9dp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewIconOne"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectOne" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutServerTwo"
+                android:layout_width="296dp"
+                android:layout_height="63dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bac_loading"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutServerOne">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="275dp"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageViewIconTwo"
+                        android:layout_width="7dp"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="6dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewNameProjectTwo"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectTwo"
+                        app:srcCompat="@drawable/icon_ellipse" />
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBarServerTwo"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="198dp"
+                        android:layout_height="10dp"
+                        android:layout_marginBottom="6dp"
+                        android:indeterminate="false"
+                        android:indeterminateTint="#e2e2e2"
+                        android:max="100"
+                        android:minWidth="200dp"
+                        android:minHeight="50dp"
+                        android:padding="10dp"
+                        android:progress="26"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewServerTwoCount"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNameRPTwo" />
+
+                    <TextView
+                        android:id="@+id/textViewNameProjectTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="FLIN"
+                        android:textColor="#404242"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/textViewServerTwo"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewServerTwo" />
+
+                    <TextView
+                        android:id="@+id/textViewNameRPTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="Online"
+                        android:textColor="#404242"
+                        android:textSize="15dp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toEndOf="@+id/textViewNameProjectTwo"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewServerTwo" />
+
+                    <TextView
+                        android:id="@+id/textViewServerTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="#Server 2"
+                        android:textColor="#ffbf00"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewServerTwoCount"
+                        android:layout_width="56dp"
+                        android:layout_height="10dp"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="6dp"
+                        android:fontFamily="@font/ttnorms"
+                        android:text="260/1000"
+                        android:textColor="#454545"
+                        android:textSize="9dp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewIconTwo"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNameProjectTwo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@id/linearLayoutNews"
+                android:layout_width="396dp"
+                android:layout_height="216dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/include"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView30">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="10dp"
+                    android:scrollbars="none" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewWelcomePlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/ttnorms"
+                android:gravity="center"
+                android:text="Добро пожаловать!"
+                android:textColor="#2F3535"
+                android:textSize="12dp"
+                android:textStyle="bold"
+
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <TextView
+                android:id="@+id/textViewPlayerDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/ttnorms"
+                android:gravity="center"
+                android:text="Мы соскучились, давно тебя не было в игре!\nДавай скорей заходи."
+                android:textColor="@color/colorMainApp"
+                android:textSize="12dp"
+                android:textStyle="normal"
+
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewWelcomePlayer" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ttnorms"
+                android:gravity="center"
+                android:text="Мониторинг"
+                android:textColor="#454445"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutNews" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/ttnorms"
+                android:gravity="center"
+                android:text="О нас"
+                android:textColor="#454445"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutServerTwo" />
+
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/ttnorms"
+                android:gravity="center"
+                android:text="Новости проекта"
+                android:textColor="#454445"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPlayerDescription" />
+
+
+            <TextView
+                android:id="@+id/textViewVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/ttnorms"
+                android:gravity="center"
+                android:text="v4.0 (Build 23)"
+                android:textColor="#7c8080"
+                android:textSize="8dp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewContactForm">
+
+
+                <LinearLayout
+
+                    android:id="@+id/linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="10dp"
+                    android:orientation="horizontal"></LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/colorWhite"
+        app:fabCradleRoundedCornerRadius="16dp"
+        app:fabAlignmentMode="center"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/imageDownLeftMenu"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_settings36"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:text="Настройки"
+                android:textSize="12dp"
+                android:fontFamily="@font/ttnorms"
+                android:textAllCaps="false"
+                android:textColor="#303030">
+            </TextView>
+
+
+            <TextView
+
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_delete_24dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="@color/colorWarning"
+                android:fontFamily="@font/gilroy"
+                android:textAllCaps="false"
+                android:visibility="invisible">
+            </TextView>
+
+            <TextView
+                android:id="@+id/imageDownRightMenu"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_buy_donate"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Магазин"
+                android:textSize="12dp"
+                android:fontFamily="@font/ttnorms"
+                android:textAllCaps="false"
+                android:textColor="#303030">
+            </TextView>
+
+        </LinearLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/imageDownCenterMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_anchor="@id/bottomAppBar"
+        app:srcCompat="@drawable/outline_sports_esports_white_36" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

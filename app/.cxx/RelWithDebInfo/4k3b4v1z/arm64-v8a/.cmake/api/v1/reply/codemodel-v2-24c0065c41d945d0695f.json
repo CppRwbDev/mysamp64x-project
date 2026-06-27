@@ -1,0 +1,125 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "opus",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-opus-RelWithDebInfo-e1ec99a3f6570904d179.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "opus",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "multiplayer",
+					"jsonFile" : "directory-multiplayer-RelWithDebInfo-e24b78c7be3229f2adc5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "multiplayer",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Opus",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "multiplayer",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "multiplayer::@096bc6a91eed263f3791",
+					"jsonFile" : "target-multiplayer-RelWithDebInfo-2ac6ac648cbb6cadf4da.json",
+					"name" : "multiplayer",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "opus::@27c8c1d919c410202cbb",
+					"jsonFile" : "target-opus-RelWithDebInfo-05522d3e6faf761c7b41.json",
+					"name" : "opus",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/.cxx/RelWithDebInfo/4k3b4v1z/arm64-v8a",
+		"source" : "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

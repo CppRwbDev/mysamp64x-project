@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_signin_btn_dark_text_default">@android:color/white</color>
+    <color name="common_signin_btn_dark_text_pressed">@android:color/white</color>
+    <color name="common_signin_btn_dark_text_disabled">#ffaaaaaa</color>
+    <color name="common_signin_btn_dark_text_focused">@android:color/white</color>
+    <color name="common_signin_btn_light_text_default">#ff737373</color>
+    <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
+    <color name="common_signin_btn_light_text_disabled">#ffaaaaaa</color>
+    <color name="common_signin_btn_light_text_focused">#ff737373</color>
+    <color name="common_signin_btn_default_background">#ffdd4b39</color>
+    <color name="common_action_bar_splitter">#ffd2d2d2</color>
+    <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
+    <color name="wallet_dim_foreground_holo_dark">#ffbebebe</color>
+    <color name="wallet_dim_foreground_disabled_holo_dark">#80bebebe</color>
+    <color name="wallet_dim_foreground_inverse_holo_dark">#ff323232</color>
+    <color name="wallet_dim_foreground_inverse_disabled_holo_dark">#80323232</color>
+    <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+    <color name="wallet_bright_foreground_holo_light">#ff000000</color>
+    <color name="wallet_hint_foreground_holo_light">#ff808080</color>
+    <color name="wallet_hint_foreground_holo_dark">#ff808080</color>
+    <color name="wallet_highlighted_text_holo_light">#6633b5e5</color>
+    <color name="wallet_highlighted_text_holo_dark">#6633b5e5</color>
+    <color name="wallet_holo_blue_light">#ff33b5e5</color>
+    <color name="wallet_link_text_light">#ff0000ee</color>
+    <color name="black">#ff000000</color>
+
+
+
+
+    //Лаунчер
+    <color name="colorMain">#FF7501</color>
+
+    <color name="colorButtonStart">#FF4F01</color>
+
+
+    <color name="colorWarning">#F31100</color>
+
+
+    <color name="colorButtonSettingsUnSelect">#6F6969</color>
+
+
+    <color name="colorPrimary">#ffa800</color>
+    <color name="colorPrimaryDark">#ffa800</color>
+    <color name="colorAccent">#ffa800</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+
+
+    <color name="colorOrange">#ffa800</color>
+    <color name="colorMainApp">#2F3535</color>
+    <color name="colorBlack">#000000</color>
+
+
+
+    <color name="colorBlackMenu">#648595</color>
+
+    <!-- Новости -->
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_95">#1a1a1a</color>
+    <color name="grey_100_">#0d0d0d</color>
+    <color name="shadow_black">#000000</color>
+
+
+</resources>

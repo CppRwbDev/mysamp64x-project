@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/keyboardStandard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:id="@+id/wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/visibleZone"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <LinearLayout
+                android:layout_width="55dp"
+                android:layout_height="65dp"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="3dp"
+                android:background="#000000"
+                android:orientation="vertical"
+                android:paddingLeft="3dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="5dp">
+
+                <Button
+                    android:id="@+id/buttonHistoryUP"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4725"
+                    android:background="#1AFFFFFF"
+                    android:text="UP"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12dp" />
+
+                <FrameLayout
+                    android:id="@+id/divisionHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.05">
+
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/buttonHistoryDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4725"
+                    android:background="#1AFFFFFF"
+                    android:text="DOWN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="#B0000000"
+            android:orientation="vertical">
+
+            <com.flinc.core.KeyboardInputTextView
+                android:id="@+id/contentText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.15"
+                android:background="@null"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:inputType="textPersonName"
+                android:paddingLeft="15dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+
+            <FrameLayout
+                android:id="@+id/contentDesignDivisionLine"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.005"
+                android:background="#F59132">
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/contentButtonsLines"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.845"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/contentButtonsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.75"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:id="@+id/contentButtonsListLineUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="10" />
+
+                    <LinearLayout
+                        android:id="@+id/contentButtonsListLineMiddle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="9" />
+
+                    <LinearLayout
+                        android:id="@+id/contentButtonsListLineDown"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="10.1">
+
+                        <com.flinc.core.KeyboardButtonShiftView
+                            android:id="@+id/contentButtonSymbolShift"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp" />
+
+                        <com.flinc.core.KeyboardButtonBackspaceView
+                            android:id="@+id/contentButtonSymbolBackspace"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:textAllCaps="false"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contentButtonsContainerFunctionSymbols"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/contentButtonSymbolSpec1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="/"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/contentButtonSymbolSpec2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text=","
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/contentButtonSymbolSpecLang"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="lang"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" />
+
+                    <com.flinc.core.KeyboardButtonSpaceView
+                        android:id="@+id/contentButtonSymbolSpace"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="0.4"
+                        android:background="@null"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/contentButtonSymbolSpec3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="?"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" />
+
+                    <Button
+                        android:id="@+id/contentButtonSymbolSpec4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="!"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" />
+
+                    <com.flinc.core.KeyboardButtonEnterView
+                        android:id="@+id/contentButtonSymbolEnter"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.1"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

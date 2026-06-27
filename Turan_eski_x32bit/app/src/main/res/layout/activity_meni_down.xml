@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.Material"
+    android:background="@drawable/bac">
+
+    <!-- Note: A RecyclerView can also be used -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        android:paddingTop="@dimen/spacing_large"
+        android:scrollbars="vertical"
+        android:scrollingCache="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/colorWhite"
+        app:fabCradleRoundedCornerRadius="16dp"
+        app:fabAlignmentMode="center"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/imageDownLeftMenu"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_settings36"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:text="Настройки"
+                android:textSize="12dp"
+                android:fontFamily="@font/ttnorms"
+                android:textAllCaps="false"
+                android:textColor="#303030">
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/imageDownCenterMenu"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_delete_24dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textColor="@color/colorWarning"
+                android:fontFamily="@font/gilroy"
+                android:textAllCaps="false"
+                android:visibility="invisible">
+            </TextView>
+
+            <TextView
+                android:id="@+id/imageDownRightMenu"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableTop="@drawable/ic_buy_donate"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="Магазин"
+                android:textSize="12dp"
+                android:fontFamily="@font/ttnorms"
+                android:textAllCaps="false"
+                android:textColor="#303030">
+            </TextView>
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@android:color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_anchor="@id/bottomAppBar"
+        app:srcCompat="@drawable/outline_sports_esports_white_36" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

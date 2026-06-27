@@ -1,0 +1,47 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bloading_screen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/loading">
+
+    <com.tuyenmonkey.mkloader.MKLoader
+        android:id="@+id/MKLoader"
+        android:layout_width="64dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:mk_color="#ffffff"
+        app:mk_type="TwinFishesSpinner" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Пожалуйста подождите..."
+        android:textColor="#E9FFFFFF"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/MKLoader"
+        app:layout_constraintStart_toEndOf="@+id/MKLoader"
+        app:layout_constraintTop_toTopOf="@+id/MKLoader" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="120dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/flin_dialog_button_two"
+        android:fontFamily="@font/montsserat_semibold"
+        android:text=" "
+        android:textAllCaps="false"
+        android:textColor="#D8FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/MKLoader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MKLoader" />
+</androidx.constraintlayout.widget.ConstraintLayout>

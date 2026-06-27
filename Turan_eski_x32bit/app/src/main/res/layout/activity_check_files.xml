@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bac"
+    tools:context="com.flin.online.CheckFilesActivity">
+
+
+
+  <ImageView
+      android:id="@+id/imageView2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="190dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/logo_project" />
+
+
+
+
+  <TextView
+      android:id="@+id/textViewLabelWarning"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="16dp"
+      android:gravity="center"
+      android:fontFamily="@font/ttnorms"
+      android:text="Проверка может занимать какое-то время,\nни в коем случае не закрывайте приложение\nдо завершения проверки игры."
+      android:textColor="#7c8080"
+      android:textSize="10dp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+
+  <ScrollView
+      android:id="@+id/scrollViewList"
+      android:layout_width="match_parent"
+      android:layout_height="400dp"
+      android:layout_marginTop="15dp"
+      android:visibility="gone"
+      app:layout_constraintTop_toBottomOf="@+id/textViewFinish">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <ListView
+          android:id="@+id/listViewСheckFiles"
+          android:layout_width="match_parent"
+          android:layout_height="400dp"
+          android:visibility="visible"/>
+    </LinearLayout>
+  </ScrollView>
+
+  <TextView
+      android:id="@+id/textViewFinish"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="40dp"
+      android:fontFamily="@font/ttnorms"
+      android:gravity="center"
+      android:text="Проверка может занимать какое-то время,\nни в коем случае не закрывайте приложение\nдо завершения проверки игры."
+      android:textColor="#7c8080"
+      android:textSize="16dp"
+      android:textStyle="bold"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textViewVersion" />
+
+  <TextView
+      android:id="@+id/textViewVersion"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="2dp"
+      android:fontFamily="@font/ttnorms"
+      android:gravity="center"
+      android:text="v4.0 (Build 23)"
+      android:textColor="#7c8080"
+      android:textSize="8dp"
+      android:textStyle="normal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+
+  <LinearLayout
+      android:id="@+id/linearLayoutReinstallGameFiles"
+      android:layout_width="176dp"
+      android:layout_height="38dp"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/btn_background_all_group"
+      android:orientation="vertical"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/scrollViewList">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginBottom="4dp"
+          android:fontFamily="@font/ttnorms"
+          android:gravity="center"
+          android:maxLines="2"
+          android:shadowColor="#FF5722"
+          android:shadowRadius="4"
+          android:text="Переустановить игру"
+          android:textAllCaps="false"
+          android:textColor="@color/colorWhite"
+          android:textSize="10dp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </LinearLayout>
+
+
+  <LinearLayout
+      android:id="@+id/linearLayoutBackSettings"
+      android:layout_width="176dp"
+      android:layout_height="38dp"
+      android:layout_marginTop="10dp"
+      android:background="@drawable/btn_background_all_group"
+      android:orientation="vertical"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayoutReinstallGameFiles">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginBottom="4dp"
+          android:fontFamily="@font/ttnorms"
+          android:gravity="center"
+          android:maxLines="2"
+          android:shadowColor="#AFAEAE"
+          android:shadowRadius="4"
+          android:text="Вернуться в настройки"
+          android:textAllCaps="false"
+          android:textColor="@color/colorWhite"
+          android:textSize="10dp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/linearLayoutProgressCheckFiles"
+      android:layout_width="359dp"
+      android:layout_height="64dp"
+      android:layout_marginBottom="8dp"
+      android:background="@drawable/bac_loading"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toTopOf="@+id/textViewLabelWarning"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <ImageView
+          android:id="@+id/imageView3"
+          android:layout_width="12dp"
+          android:layout_height="14dp"
+          android:layout_marginStart="8dp"
+          app:layout_constraintBottom_toTopOf="@+id/progressBarInstall"
+          app:layout_constraintStart_toStartOf="parent"
+          app:srcCompat="@drawable/icon_loading" />
+
+      <ProgressBar
+          android:id="@+id/progressBarInstall"
+          style="?android:attr/progressBarStyleHorizontal"
+          android:layout_width="352dp"
+          android:layout_height="23dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="8dp"
+          android:indeterminate="false"
+          android:indeterminateTint="#e2e2e2"
+          android:max="100"
+          android:minWidth="200dp"
+          android:minHeight="50dp"
+          android:padding="10dp"
+          android:progress="32"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.456"
+          tools:ignore="MissingConstraints" />
+
+
+      <TextView
+          android:id="@+id/textViewPercent"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:layout_marginEnd="8dp"
+          android:fontFamily="@font/ttnorms"
+          android:text="32%"
+          android:textColor="#7c8080"
+          android:textSize="10dp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toTopOf="@+id/progressBarInstall"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+      <TextView
+          android:id="@+id/textViewInfoInstallFull"
+          android:layout_width="240dp"
+          android:layout_height="0dp"
+          android:layout_marginStart="2dp"
+          android:fontFamily="@font/ttnorms"
+          android:text="Идет проверка игры..."
+          android:textColor="#7c8080"
+          android:textSize="10dp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toTopOf="@+id/progressBarInstall"
+          app:layout_constraintStart_toEndOf="@+id/imageView3" />
+
+      <TextView
+          android:id="@+id/textViewProgressFull"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="8dp"
+          android:fontFamily="@font/ttnorms"
+          android:text="....."
+          android:textColor="#7c8080"
+          android:textSize="9dp"
+          android:textStyle="bold"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/progressBarInstall" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

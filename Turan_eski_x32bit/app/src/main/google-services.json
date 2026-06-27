@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "765480805022",
+    "firebase_url": "https://flin-rp.firebaseio.com",
+    "project_id": "flin-rp",
+    "storage_bucket": "flin-rp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765480805022:android:55d482c5c812e799b6118f",
+        "android_client_info": {
+          "package_name": "com.flin.online"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765480805022-qa4ds0h2ajtkh7nkfpahfuvdacm9257s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEX5usge9Yro-DHR9cWxefo0WL28EwzeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765480805022-qa4ds0h2ajtkh7nkfpahfuvdacm9257s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765480805022:android:7e10e5e3e313bfbbb6118f",
+        "android_client_info": {
+          "package_name": "com.vice.sa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765480805022-qa4ds0h2ajtkh7nkfpahfuvdacm9257s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEX5usge9Yro-DHR9cWxefo0WL28EwzeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765480805022-qa4ds0h2ajtkh7nkfpahfuvdacm9257s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

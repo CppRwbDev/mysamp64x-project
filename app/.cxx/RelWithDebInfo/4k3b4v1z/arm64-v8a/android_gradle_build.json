@@ -1,0 +1,59 @@
+{
+  "buildFiles": [
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/CMakeLists.txt",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/multiplayer/CMakeLists.txt",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/CMakeLists.txt",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/CFeatureCheck.cmake",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/OpusBuildtype.cmake",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/OpusConfig.cmake",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/OpusConfig.cmake.in",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/OpusFunctions.cmake",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/OpusPackageVersion.cmake",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/OpusSources.cmake",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/opus/cmake/config.h.cmake.in"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/darkdev/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/.cxx/RelWithDebInfo/4k3b4v1z/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/darkdev/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/.cxx/RelWithDebInfo/4k3b4v1z/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "multiplayer::@096bc6a91eed263f3791": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "multiplayer",
+      "output": "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/build/intermediates/cxx/RelWithDebInfo/4k3b4v1z/obj/arm64-v8a/libmultiplayer.so",
+      "runtimeFiles": [
+        "/home/darkdev/.gradle/caches/transforms-3/1adceab8c7f32be996e574bc726ba6a9/transformed/shadowhook-1.0.9/prefab/modules/shadowhook/libs/android.arm64-v8a/libshadowhook.so",
+        "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/src/main/cpp/multiplayer/vendor/bass/libs/arm64-v8a/libbass.so"
+      ]
+    },
+    "opus::@27c8c1d919c410202cbb": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "opus",
+      "output": "/home/darkdev/Downloads/Telegram_Desktop/TuranX64__FULL/app/.cxx/RelWithDebInfo/4k3b4v1z/arm64-v8a/opus/libopus.a"
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/darkdev/Android/Sdk/ndk/26.2.11394342/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/darkdev/Android/Sdk/ndk/26.2.11394342/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
