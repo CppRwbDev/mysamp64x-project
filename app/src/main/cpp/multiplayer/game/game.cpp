@@ -791,7 +791,7 @@ void CGame::Process() {
     MainLoop();
     if (pNetGame)
     {
-        if(pGame && pGame->FindPlayerPed() && pUI && pUI->buttonpanel() && pUI->buttonpanel()->m_bH)
+        /*if(pGame && pGame->FindPlayerPed() && pUI && pUI->buttonpanel() && pUI->buttonpanel()->m_bH)
         {
             if(pGame->FindPlayerPed()->IsInVehicle())
             {
@@ -799,7 +799,7 @@ void CGame::Process() {
             }
             else
                 pUI->buttonpanel()->m_bH->setCaption("H");
-        }
+        }*/
 
         CObjectPool* pObjectPool = pNetGame->GetObjectPool();
         if (pObjectPool) {

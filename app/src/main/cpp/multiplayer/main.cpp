@@ -376,6 +376,17 @@ Java_com_turan_game_ui_Hud_sendTabKey(JNIEnv *env, jobject thiz) {
 
 extern "C"
 JNIEXPORT void JNICALL
+Java_com_turan_game_ui_Hud_showButtonSelector(JNIEnv *env, jobject thiz) {
+    if(pUI && pUI->buttonselector()) {
+        if(pUI->buttonselector()->visible())
+            pUI->buttonselector()->hide();
+        else
+            pUI->buttonselector()->show();
+    }
+}
+
+extern "C"
+JNIEXPORT void JNICALL
 Java_com_turan_game_ui_Hud_nativeSetRadarPos(JNIEnv *env, jobject thiz, jfloat x, jfloat y, jfloat width, jfloat height) {
     radarPos.x = x;
     radarPos.y = y;

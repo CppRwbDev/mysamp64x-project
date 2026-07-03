@@ -1,5 +1,7 @@
 #pragma once
 
+#include "common.h"
+
 enum ePadKeys
 {
 	// KEY_ 						OnFoot 				InCar

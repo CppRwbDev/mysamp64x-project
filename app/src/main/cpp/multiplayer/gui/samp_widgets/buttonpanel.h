@@ -1,27 +1,24 @@
 #pragma once
 
+#include "../../game/pad.h"
+
 class ButtonPanel : public Layout
 {
 public:
     ButtonPanel();
+    ~ButtonPanel();
 
-    CButton* m_bH;
-    CButton* m_bAlt;
-    CButton* m_bEsc;
-    CButton* m_bF;
-    CButton* m_bY;
-    CButton* m_bN;
-    CButton* m_bG;
-    CButton* m_b2;
-    CButton* m_bTab;
-    CButton* m_bClose;
+    void AddCustomButton(ePadKeys key, const std::string& name);
+    void RemoveCustomButton(ePadKeys key, const std::string& name);
+    void SaveCustomButtons();
+    void LoadCustomButtons();
 
 private:
     OButton* m_bToggle;
-    CButton* m_bP;
-    CButton* m_bFOOD;
-    CButton* m_bGPS;
-    CButton* m_bD;
-    CButton* m_bUSE;
 
+    struct CustomButton {
+        ePadKeys key;
+        CButton* button;
+    };
+    std::vector<CustomButton> m_customButtons;
 };

@@ -8,6 +8,8 @@
 
 #define VER_2_1 true
 
+#define PLAYER_PED_SLOTS	120
+
 #define IN_VEHICLE(x) ((x->dwStateFlags & 0x100) >> 8)
 #define IS_CROUCHING(x) ((x->dwStateFlags >> 26) & 1)
 #define IS_FIRING(x) (x->bFiringWeapon)

@@ -66,6 +66,11 @@ bool UI::initialize()
     m_buttonPanel->setPosition(UISettings::buttonPanelPos());
     m_buttonPanel->setVisible(false);
 
+    m_buttonSelector = new ButtonSelector();
+    this->addChild(m_buttonSelector);
+    m_buttonSelector->setFixedSize(ImVec2(UISettings::fontSize() * 10, UISettings::fontSize() * 15));
+    m_buttonSelector->setVisible(false);
+
     m_voiceButton = new VoiceButton();
     this->addChild(m_voiceButton);
     m_voiceButton->setFixedSize(UISettings::buttonVoiceSize());
@@ -187,6 +192,18 @@ void UI::touchEvent(const ImVec2& pos, TouchType type)
     if (m_dialog->visible() && m_dialog->contains(pos))
     {
         m_dialog->touchEvent(pos, type);
+        return;
+    }
+
+    if (m_buttonSelector->visible() && m_buttonSelector->contains(pos))
+    {
+        m_buttonSelector->touchEvent(pos, type);
+        return;
+    }
+
+    if (m_buttonPanel->visible() && m_buttonPanel->contains(pos))
+    {
+        m_buttonPanel->touchEvent(pos, type);
         return;
     }
 

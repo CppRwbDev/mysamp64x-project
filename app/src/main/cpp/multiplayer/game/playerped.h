@@ -4,6 +4,7 @@
 #include "object.h"
 #include "game/Entity/CPedGTA.h"
 #include "aimstuff.h"
+#include "common.h"
 
 enum eStuffType {
 	STUFF_TYPE_NONE,
@@ -12,8 +13,6 @@ enum eStuffType {
 	STUFF_TYPE_PINT_GLASS,
 	STUFF_TYPE_CIGGI
 };
-
-#define PLAYER_PED_SLOTS	120
 
 #pragma pack(push, 1)
 typedef struct _BULLET_DATA

@@ -25,6 +25,7 @@
 #include "samp_widgets/playertablist.h"
 #include "samp_widgets/voicebutton.h"
 
+#include "samp_widgets/button_selector.h"
 #include "samp_widgets/dialogs/dialog.h"
 
 #include "../vendor/raknet/SingleProducerConsumer.h"
@@ -54,6 +55,7 @@ public:
     Keyboard* keyboard() const { return m_keyboard; }
     Dialog* dialog() const { return m_dialog; }
     ButtonPanel* buttonpanel() const { return m_buttonPanel; }
+    ButtonSelector* buttonselector() const { return m_buttonSelector; }
     PlayerTabList* playertablist() const { return m_playerTabList; }
     VoiceButton* voicebutton() const { return m_voiceButton; }
 
@@ -126,6 +128,7 @@ private:
     Spawn* m_spawn;
     Dialog* m_dialog;
     ButtonPanel* m_buttonPanel;
+    ButtonSelector* m_buttonSelector;
     PlayerTabList* m_playerTabList;
     VoiceButton* m_voiceButton;
     Label* label;

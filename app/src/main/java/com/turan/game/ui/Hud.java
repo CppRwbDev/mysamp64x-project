@@ -41,7 +41,7 @@ public class Hud {
     public TextView health_text, armour_text, eat_text, hud_money, hud_ammo, hud_logo_text;
     public ImageView hud_logo_img;
     public ConstraintLayout samp_buttons_layout;
-    public ImageView hud_button_menu, hud_button_star, hud_button_inv, hud_button_shop, hud_button_help;
+    public ImageView hud_button_menu, hud_button_star, hud_button_inv, hud_button_shop, hud_button_help, hud_button_config;
     public ImageView radar_zone;
     public ConstraintLayout radar_layout, select_weapon;
     public ImageView weapon_button;
@@ -109,6 +109,7 @@ public class Hud {
     public native void sendCtrlKey();
     public native void sendAltKey();
     public native void sendTabKey();
+    public native void showButtonSelector();
     public native void cycleWeapon();
 
     public Hud(Activity aactivity) {
@@ -139,6 +140,15 @@ public class Hud {
     }
 
     private void setupButtonClickListeners() {
+        if (hud_button_config != null) {
+            hud_button_config.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    v.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.button_click));
+                    showButtonSelector();
+                }
+            });
+        }
         setMenuButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -319,6 +329,7 @@ public class Hud {
         hud_button_inv = main_hud.findViewById(R.id.hud_button_inv);
         hud_button_shop = main_hud.findViewById(R.id.hud_button_shop);
         hud_button_help = main_hud.findViewById(R.id.hud_button_help);
+        hud_button_config = main_hud.findViewById(R.id.hud_button_config);
         radar_zone = main_hud.findViewById(R.id.radar_zone);
         radar_layout = main_hud.findViewById(R.id.radar_layout);
         select_weapon = main_hud.findViewById(R.id.select_weapon);

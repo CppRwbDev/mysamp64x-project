@@ -1,2 +1,17 @@
 /build*.zip
 *.zip
+
+# Gradle & Android Studio
+.gradle/
+local.properties
+.idea/
+build/
+app/build/
+
+# C++ Build outputs and CMake
+.cxx/
+**/CMakeFiles/
+**/*.o
+**/*.ninja
+**/*.cmake
+**/CMakeCache.txt

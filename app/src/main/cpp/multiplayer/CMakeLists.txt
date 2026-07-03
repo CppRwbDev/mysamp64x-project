@@ -56,6 +56,9 @@ endif()
 if(NOT "game/CHandlingDefault.cpp" IN_LIST SOURCES)
     list(APPEND SOURCES ${CMAKE_CURRENT_LIST_DIR}/game/CHandlingDefault.cpp)
 endif()
+if(NOT "gui/samp_widgets/button_selector.cpp" IN_LIST SOURCES)
+    list(APPEND SOURCES ${CMAKE_CURRENT_LIST_DIR}/gui/samp_widgets/button_selector.cpp)
+endif()
 
 # Opus
 add_library(libopus STATIC IMPORTED)
