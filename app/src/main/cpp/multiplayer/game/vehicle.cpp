@@ -5,6 +5,7 @@
 #include "Streaming.h"
 #include "CHandlingDefault.h"
 #include "game/Models/ModelInfo.h"
+#include <cmath>
 
 extern CGame* pGame;
 extern CNetGame* pNetGame;
@@ -200,6 +201,16 @@ void CVehicle::SetHealth(float fHealth)
 	if (m_pVehicle) {
 		m_pVehicle->fHealth = fHealth;
 	}
+}
+// 0.3.7
+float CVehicle::GetSpeed()
+{
+    if(m_pVehicle)
+    {
+        CVector vec = m_pVehicle->m_vecMoveSpeed;
+        return sqrtf(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z) * 180.0f;
+    }
+    return 0.0f;
 }
 // 0.3.7
 int CVehicle::GetVehicleSubtype()

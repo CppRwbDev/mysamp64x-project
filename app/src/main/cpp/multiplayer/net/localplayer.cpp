@@ -1398,7 +1398,17 @@ int CLocalPlayer::GetOptimumOnFootSendRate()
         for(int i = 2; i < 120; i++)
             if(bUsedPlayerSlots[i]) iNumPlayersInRange++;
 
-        return (iNetModeNormalOnFootSendRate + iNumPlayersInRange);
+        int iRate = iNetModeNormalOnFootSendRate + iNumPlayersInRange;
+
+        // Dynamic optimization: if player is idle, reduce send rate to save CPU/Battery
+        if (m_pPlayerPed->m_pPed) {
+            CVector vecSpeed = m_pPlayerPed->m_pPed->m_vecMoveSpeed;
+            if (vecSpeed.x == 0.0f && vecSpeed.y == 0.0f && vecSpeed.z == 0.0f) {
+                iRate *= 2;
+            }
+        }
+
+        return iRate;
     }
 }
 // 0.3.7
@@ -1413,7 +1423,20 @@ int CLocalPlayer::GetOptimumInCarSendRate()
         for(int i = 0; i < 120; i++)
             if(bUsedPlayerSlots[i]) iNumPlayersInRange++;
 
-        return (iNetModeNormalInCarSendRate + iNumPlayersInRange);
+        int iRate = iNetModeNormalInCarSendRate + iNumPlayersInRange;
+
+        // Dynamic optimization for vehicles
+        if (m_pPlayerPed->m_pPed) {
+            CVehicleGTA* pVeh = m_pPlayerPed->GetGtaVehicle();
+            if (pVeh) {
+                CVector vecSpeed = pVeh->m_vecMoveSpeed;
+                if (vecSpeed.x == 0.0f && vecSpeed.y == 0.0f && vecSpeed.z == 0.0f) {
+                    iRate *= 2;
+                }
+            }
+        }
+
+        return iRate;
     }
 }
 

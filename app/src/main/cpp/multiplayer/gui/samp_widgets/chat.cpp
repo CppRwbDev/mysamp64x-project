@@ -206,15 +206,6 @@ bool Chat::commandClient(const std::string& command)
         return true;
     }
 
-    if (command == "/fpsinfo")
-    {
-        if (pUI)
-        {
-            pUI->ToggleFPSInfo();
-        }
-        return true;
-    }
-
     return false;
 }
 

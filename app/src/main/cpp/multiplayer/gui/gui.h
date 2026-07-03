@@ -80,43 +80,23 @@ public:
         return UISettings::fontSize();
     }
 
+    int GetEat() { return m_iEat; }
+    int GetDrink() { return m_iDrink; }
+    int GetBankMoney() { return m_iBankMoney; }
+
+    void SetEat(float eat) { m_iEat = (int)eat; }
+    void SetDrink(float drink) { m_iDrink = (int)drink; }
+    void SetBankMoney(uint32_t bank) { m_iBankMoney = (int)bank; }
+    void SetFuel(float fuel) { m_fFuel = fuel; }
+
+    void PushToBufferedQueueTextDrawPressed(uint16_t id);
+
     virtual void touchEvent(const ImVec2& pos, TouchType type) override;
 
     bool OnTouchEvent(int type, bool multi, int x, int y);
 
     void renderDebug();
     void ShowSpeed();
-    void SetEngine(int engine);
-    int bEngine;
-    void SetLights(int lights);
-    int bLights;
-    void SetDoor(int door);
-    int bDoor;
-    void SetMeliage(float meliage);
-    int bMeliage = 0;
-    void SetFuel(float fuel);
-    uint8_t m_fuel;
-    void SetHealth(float fHealth);
-    int GetHealth();
-    int bHealth;
-
-    void ProcessPushedTextdraws();
-    void PushToBufferedQueueTextDrawPressed(uint16_t textdrawId);
-
-    void SetEat(float eat);
-    void SetDrink(float drink);
-    int GetEat();
-    int eat;
-    int GetDrink();
-    int drink;
-    int bankMoney = 0;
-    void SetBankMoney(uint32_t bank);
-    int GetBankMoney();
-
-    // Добавленные методы для управления FPS-информацией
-    void ToggleFPSInfo();
-    bool IsFPSInfoVisible() const { return m_bShowFPSInfo; }
-    void SetFPSInfoVisible(bool visible) { m_bShowFPSInfo = visible; }
 
 protected:
     void drawList() override;
@@ -131,15 +111,15 @@ private:
     ButtonSelector* m_buttonSelector;
     PlayerTabList* m_playerTabList;
     VoiceButton* m_voiceButton;
-    Label* label;
-    Label* label2;
-    Label* label3;
-    Label* label4;
 
     CJavaWrapper* m_pJavaWrapper;
 
+    int m_iEat;
+    int m_iDrink;
+    int m_iBankMoney;
+    float m_fFuel;
+
     bool m_bNeedClearMousePos = false;
-    bool m_bShowFPSInfo = true;
 
     DataStructures::SingleProducerConsumer<BUFFERED_COMMAND_TEXTDRAW> m_BufferedCommandTextdraws;
 };

@@ -34,13 +34,12 @@ static bool bAFKInitialized = false;
 UI::UI(const ImVec2& display_size, const std::string& font_path)
         : Widget(), ImGuiWrapper(display_size, font_path), m_pJavaWrapper(nullptr)
 {
+    m_iEat = 0;
+    m_iDrink = 0;
+    m_iBankMoney = 0;
+    m_fFuel = 0.0f;
     UISettings::Initialize(display_size);
     this->setFixedSize(display_size);
-
-    // Загружаем сохраненное состояние FPS info
-    if(pSettings) {
-        m_bShowFPSInfo = pSettings->GetFPSInfo();
-    }
 }
 
 bool UI::initialize()
@@ -98,48 +97,14 @@ bool UI::initialize()
     m_playerTabList = new PlayerTabList();
     //this->addChild(m_playerTabList);
 
-    label = new Label(" ", ImColor(1.0f, 1.0f, 1.0f), true, UISettings::fontSize() / 2);
-    pUI->addChild(label);
-
-    label2 = new Label(" ", ImColor(1.0f, 1.0f, 1.0f), true, UISettings::fontSize() / 2);
-    pUI->addChild(label2);
-
-    label3 = new Label(" ", ImColor(1.0f, 1.0f, 1.0f), true, UISettings::fontSize() / 2);
-    pUI->addChild(label3);
-
-    label4 = new Label(" ", ImColor(1.0f, 1.0f, 1.0f), true, UISettings::fontSize() / 2);
-    pUI->addChild(label4);
-
-/*
-    Label* d_label1;
-    if(VER_x32)
-    {
-        d_label1 = new Label(cryptor::create("2.10 SA-MP (armeabi-v7a)").decrypt(), ImColor(1.0f, 1.0f, 1.0f), true, UISettings::fontSize() / 2.5);
-        this->addChild(d_label1);
-        d_label1->setPosition(ImVec2(3.0, 3.0));
-    }
-    else
-    {
-        d_label1 = new Label(cryptor::create("2.10 SA-MP (arm64-v8a)").decrypt(), ImColor(1.0f, 1.0f, 1.0f), true, UISettings::fontSize() / 2.5);
-        this->addChild(d_label1);
-        d_label1->setPosition(ImVec2(3.0, 3.0));
-    }
-*/
-
     return true;
 }
 
-#include "../game/CGPS.hpp"
 void UI::render()
 {
     ImGuiWrapper::render();
 
-    if(m_bShowFPSInfo) {
-        renderDebug();
-    }
     ShowSpeed();
-
-    ProcessPushedTextdraws();
 
     if (m_bNeedClearMousePos) {
         ImGuiIO& io = ImGui::GetIO();
@@ -149,16 +114,6 @@ void UI::render()
 
     if (m_playerTabList && m_playerTabList->visible())
         m_playerTabList->Tick();
-}
-
-void UI::ToggleFPSInfo()
-{
-    m_bShowFPSInfo = !m_bShowFPSInfo;
-
-    // Сохраняем настройку
-    if(pSettings) {
-        pSettings->SetFPSInfo(m_bShowFPSInfo);
-    }
 }
 
 void UI::shutdown()
@@ -221,212 +176,64 @@ bool UI::OnTouchEvent(int type, bool multi, int x, int y)
 {
     ImGuiIO& io = ImGui::GetIO();
 
-    VoiceButton* vbutton = pUI->voicebutton();
-    switch (type)
+    if (multi) return false;
+
+    if (type == TOUCH_PUSH)
     {
-        case TOUCH_PUSH:
-            io.MousePos = ImVec2(x, y);
-            io.MouseDown[0] = true;
-            break;
-
-        case TOUCH_POP:
-            io.MouseDown[0] = false;
-            m_bNeedClearMousePos = true;
-            break;
-
-        case TOUCH_MOVE:
-            io.MousePos = ImVec2(x, y);
-            break;
+        io.MousePos = ImVec2(x, y);
+        io.MouseDown[0] = true;
+        touchEvent(io.MousePos, TouchType::push);
+    }
+    else if (type == TOUCH_POP)
+    {
+        io.MouseDown[0] = false;
+        touchEvent(io.MousePos, TouchType::pop);
+        m_bNeedClearMousePos = true;
+    }
+    else if (type == TOUCH_MOVE)
+    {
+        io.MousePos = ImVec2(x, y);
+        touchEvent(io.MousePos, TouchType::move);
     }
 
-    return true;
+    if (m_keyboard->visible() && m_keyboard->contains(io.MousePos)) return true;
+    if (m_dialog->visible() && m_dialog->contains(io.MousePos)) return true;
+    if (m_buttonSelector->visible() && m_buttonSelector->contains(io.MousePos)) return true;
+    if (m_buttonPanel->visible() && m_buttonPanel->contains(io.MousePos)) return true;
+
+    return false;
 }
 
-#include "../settings.h"
 void UI::renderDebug()
 {
-    if(!pSettings->Get().iFPSCounter) return;
-
-    if (m_chat->active() || m_keyboard->visible())
-    {
-        label->setText(" ");
-        label2->setText(" ");
-        label3->setText(" ");
-        label4->setText(" ");
-        return;
-    }
-
-    char szStr[30];
-    char szStrMem[64];
-    char szStrPos[64];
-
-    ImVec2 pos = ImVec2(pUI->ScaleX(40.0f), pUI->ScaleY(1080.0f - UISettings::fontSize() * 3.5));
-
-    static float fps = 120.f;
-    static auto lastTick = CTimer::m_snTimeInMillisecondsNonClipped;
-    if(CTimer::m_snTimeInMillisecondsNonClipped - lastTick > 500) {
-        lastTick = CTimer::m_snTimeInMillisecondsNonClipped;
-        fps = std::clamp(CTimer::game_FPS, 10.f, (float) 120);
-    }
-    if(VER_x32)
-    {
-        snprintf(&szStr[0], sizeof(szStr), "x32 FPS: %.0f", fps);
-    }
-    else
-    {
-        snprintf(&szStr[0], sizeof(szStr), "x64 FPS: %.0f", fps);
-    }
-
-    label->setText(&szStr[0]);
-    label->setPosition(pos);
-
-    auto &msUsed = CStreaming::ms_memoryUsed;
-    auto &msAvailable = CStreaming::ms_memoryAvailable;
-
-    struct mallinfo memInfo = mallinfo();
-    int totalAllocatedMB  = memInfo.uordblks / (1024 * 1024);
-
-    snprintf(&szStrMem[0], sizeof(szStrMem), "MEM: %d mb (stream %d/%d) (Tex %d MB)",
-             totalAllocatedMB,
-             msUsed / (1024 * 1024),
-             msAvailable / (1024 * 1024),
-             TextureDatabaseRuntime::storedTexels / (1024 * 1024)
-    );
-
-    if (totalAllocatedMB >= 600)
-    {
-        CStreaming::MakeSpaceFor(500);
-    }
-
-    pos = ImVec2(pUI->ScaleX(40.0f), pUI->ScaleY(1080.0f - UISettings::fontSize() * 3));
-
-    label2->setText(&szStrMem[0]);
-    label2->setPosition(pos);
-
-    if (pGame && pGame->FindPlayerPed() && pGame->FindPlayerPed()->m_pPed)
-    {
-        snprintf(&szStrPos[0], sizeof(szStrPos), "POS: %.2f, %.2f, %.2f",
-                 pGame->FindPlayerPed()->m_pPed->m_matrix->m_pos.x,
-                 pGame->FindPlayerPed()->m_pPed->m_matrix->m_pos.y,
-                 pGame->FindPlayerPed()->m_pPed->m_matrix->m_pos.z);
-        pos = ImVec2(pUI->ScaleX(40.0f), pUI->ScaleY(1080.0f - UISettings::fontSize() * 2.5));
-        label3->setText(&szStrPos[0]);
-        label3->setPosition(pos);
-    }
-
-    char debugPools[250];
-    snprintf(&debugPools[0], sizeof(debugPools), "NSingle: %d/100000; NDouble: %d/60000; Peds: %d/240; Veh's: %d/1000; Obj: %d/3000; EntryInf: %d/60000; Dummies: %d/80000, Buildings: %d/60000",
-             GetPtrNodeSingleLinkPool()->GetNoOfUsedSpaces(),
-             GetPtrNodeDoubleLinkPool()->GetNoOfUsedSpaces(),
-             GetPedPoolGta()->GetNoOfUsedSpaces(),
-             GetVehiclePoolGta()->GetNoOfUsedSpaces(),
-             GetObjectPoolGta()->GetNoOfUsedSpaces(),
-             GetEntryInfoNodePool()->GetNoOfUsedSpaces(),
-             GetDummyPool()->GetNoOfUsedSpaces(),
-             GetBuildingPool()->GetNoOfUsedSpaces()
-    );
-
-    pos = ImVec2(pUI->ScaleX(40.0f), pUI->ScaleY(1080.0f - UISettings::fontSize() * 0.5));
-    label4->setText(&debugPools[0]);
-    label4->setPosition(pos);
 }
 
-void UI::PushToBufferedQueueTextDrawPressed(uint16_t textdrawId)
+void UI::PushToBufferedQueueTextDrawPressed(uint16_t id)
 {
-    BUFFERED_COMMAND_TEXTDRAW* pCmd = m_BufferedCommandTextdraws.WriteLock();
-
-    pCmd->textdrawId = textdrawId;
-
-    m_BufferedCommandTextdraws.WriteUnlock();
-}
-
-void UI::ProcessPushedTextdraws()
-{
-    BUFFERED_COMMAND_TEXTDRAW* pCmd = nullptr;
-    while (pCmd = m_BufferedCommandTextdraws.ReadLock())
-    {
-        RakNet::BitStream bs;
-        bs.Write(pCmd->textdrawId);
-        pNetGame->GetRakClient()->RPC(&RPC_ClickTextDraw, &bs, HIGH_PRIORITY, RELIABLE_SEQUENCED, 0, false, UNASSIGNED_NETWORK_ID, 0);
-        m_BufferedCommandTextdraws.ReadUnlock();
+    BUFFERED_COMMAND_TEXTDRAW* bct = m_BufferedCommandTextdraws.WriteLock();
+    if (bct) {
+        bct->textdrawId = id;
+        m_BufferedCommandTextdraws.WriteUnlock();
     }
 }
 
-void UI::SetEat(float eate){
-    eat = static_cast<int>(eate);
-}
-void UI::SetDrink(float drinke){
-    drink = static_cast<int>(drinke);
-}
-
-void UI::SetBankMoney(uint32_t bank)
-{
-    bankMoney = bank;
-    FLog("SetBankMoney: %u", bankMoney);
-}
-
-int UI::GetEat(){
-    return eat;
-}
-
-int UI::GetDrink(){
-    return drink;
-}
-int UI::GetBankMoney() {
-    return bankMoney;
-}
-
-void UI::SetFuel(float fuel) {
-    m_fuel = static_cast<uint8_t>(fuel);
-}
-
-void UI::ShowSpeed(){
+void UI::ShowSpeed() {
     if (!pJavaWrapper) return;
-
-    if (!pGame || !pNetGame || !pGame->FindPlayerPed()->IsInVehicle()) {
-        pJavaWrapper->HideSpeed();
-        return;
-    }
-    if (pGame->FindPlayerPed()->IsAPassenger()) {
-        pJavaWrapper->HideSpeed();
-        return;
-    }
-    //скрытие спидака ебучего #CRMPGOVNO
-    if (gMobileMenu->pendingScreen){
-        pJavaWrapper->HideSpeed();
-        return;
-    }
-
-    int i_speed = 0;
-    int vehicleHP = 0;
-    CVehicle *pVehicle = nullptr;
-    CVehiclePool *pVehiclePool = pNetGame->GetVehiclePool();
-    CPlayerPed *pPlayerPed = pGame->FindPlayerPed();
-    VEHICLEID id = pVehiclePool->FindIDFromGtaPtr(pPlayerPed->GetGtaVehicle());
-    pVehicle = pVehiclePool->GetAt(id);
-
-    if (pUI->m_chat->active()){
-        pJavaWrapper->HideSpeed();
-        return;
-    }
-
-    if(pPlayerPed)
-    {
-        if(pVehicle && pVehicle->m_pVehicle)
-        {
-            CVector vecMoveSpeed = pVehicle->m_pVehicle->GetMoveSpeed();;
-            i_speed = sqrt((vecMoveSpeed.x * vecMoveSpeed.x) + (vecMoveSpeed.y * vecMoveSpeed.y) + (vecMoveSpeed.z * vecMoveSpeed.z)) * 180;
-            vehicleHP = (int)(pVehicle->m_pVehicle->fHealth / 10.0f);
-
-            // Holatlarni to'g'ridan-to'g'ri avtomobildan olamiz
-            bEngine = pVehicle->m_pVehicle->m_nVehicleFlags.bEngineOn;
-            bLights = pVehicle->m_pVehicle->m_nVehicleFlags.bLightsOn;
-            
-            // Eshiklar holati (0 - ochiq, boshqa qiymatlar - qulflangan)
-            bDoor = (pVehicle->m_pVehicle->m_nDoorLock != CARLOCK_UNLOCKED && 
-                     pVehicle->m_pVehicle->m_nDoorLock != CARLOCK_NOT_USED) ? 1 : 0;
+    if (pGame && pGame->FindPlayerPed() && pGame->FindPlayerPed()->IsInVehicle()) {
+        CVehicle* pVehicle = pGame->FindPlayerPed()->GetCurrentVehicle();
+        if (pVehicle) {
+            pJavaWrapper->UpdateSpeedInfo(
+                (int)pVehicle->GetSpeed(),
+                (int)m_fFuel, // fuel
+                (int)pVehicle->GetHealth(),
+                0, // mileage
+                1, // engine
+                1, // light
+                0, // belt
+                0  // lock
+            );
         }
+    } else {
+        pJavaWrapper->HideSpeed();
     }
-    pJavaWrapper->ShowSpeed();
-    pJavaWrapper->UpdateSpeedInfo(i_speed, m_fuel, vehicleHP, bMeliage, bEngine, bLights, 0, bDoor);
 }

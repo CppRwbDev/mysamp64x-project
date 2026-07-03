@@ -1669,7 +1669,8 @@ void(*CStreaming__Init2)();
 void CStreaming__Init2_hook()
 {
     CStreaming__Init2();
-    CStreaming::ms_memoryAvailable = 256 * 1024 * 1024;
+    // Increase streaming memory to 512MB for better stability and less flickering
+    CStreaming::ms_memoryAvailable = 512 * 1024 * 1024;
 
     //*(uint32_t*)(g_libGTASA+(VER_x32 ? 0x00685FA0:0x85EBD8)) = 268435456;
     // try this

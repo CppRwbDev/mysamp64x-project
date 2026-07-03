@@ -51,6 +51,7 @@ public:
 	bool IsRCVehicle();
 	float GetHealth();
 	void SetHealth(float fHealth);
+	float GetSpeed();
 	CVehicle* GetTrailer();
 	CVehicle* GetTractor();
 	float GetTrainSpeed();

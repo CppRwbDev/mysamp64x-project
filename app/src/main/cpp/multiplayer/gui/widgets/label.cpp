@@ -36,6 +36,8 @@ ImVec2 Label::calculateTextSize(const std::string& text) const
 
 	ImVec2 cur_size = { 0.0f, 0.0f };
 
+	if (!ImGui::GetIO().Fonts || ImGui::GetIO().Fonts->Fonts.Size == 0 || !ImGui::GetIO().Fonts->Fonts[0]) return text_size;
+
 	float font_size = m_fontSize == 0.0f ? ImGui::GetIO().Fonts->Fonts[0]->FontSize : m_fontSize;
 	const char* text_start = text.c_str();
 	const char* text_cur = text.c_str();
@@ -47,7 +49,7 @@ ImVec2 Label::calculateTextSize(const std::string& text) const
 		{
 			if (text_cur != text_start)
 			{
-				// текст до колор-кода
+				// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅ
 				ImVec2 sz = calculateTextSize(text_start, text_cur);
 				cur_size.x += sz.x;
 				if (cur_size.y == 0.0f) cur_size.y = sz.y;
@@ -60,13 +62,13 @@ ImVec2 Label::calculateTextSize(const std::string& text) const
 		{
 			if (text_cur != text_start)
 			{
-				// текст до \n
+				// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ \n
 				ImVec2 sz = calculateTextSize(text_start, text_cur);
 				cur_size.x += sz.x;
 				if (cur_size.y == 0.0f) cur_size.y = sz.y;
 			}
 
-			// обновляем text_size
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ text_size
 			text_size.x = ImMax(text_size.x, cur_size.x);
 			cur_size.y += font_size;
 			cur_size.x = 0.0f;
@@ -77,7 +79,7 @@ ImVec2 Label::calculateTextSize(const std::string& text) const
 		{
 			if (text_cur != text_start)
 			{
-				// текст до \t
+				// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ \t
 				ImVec2 sz = calculateTextSize(text_start, text_cur);
 				cur_size.x += sz.x;
 				if (cur_size.y == 0.0f) cur_size.y = sz.y;
@@ -92,7 +94,7 @@ ImVec2 Label::calculateTextSize(const std::string& text) const
 
 	if (text_cur != text_start)
 	{
-		// текст без форматирования
+		// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		ImVec2 sz = calculateTextSize(text_start, text_cur);
 		cur_size.x += sz.x;
 		if (cur_size.y == 0.0f) cur_size.y = sz.y;
@@ -104,6 +106,7 @@ ImVec2 Label::calculateTextSize(const std::string& text) const
 
 ImVec2 Label::calculateTextSize(const char* begin, const char* end) const
 {
+	if (!ImGui::GetIO().Fonts || ImGui::GetIO().Fonts->Fonts.Size == 0 || !ImGui::GetIO().Fonts->Fonts[0]) return { 0.0f, 0.0f };
 	ImFont* font = ImGui::GetIO().Fonts->Fonts[0];
 	return font->CalcTextSizeA(m_fontSize == 0.0f ? font->FontSize : m_fontSize, FLT_MAX, 0.0f, begin, end);
 }
@@ -147,6 +150,8 @@ ImVec2 LabelImage::calculateTextSize(const std::string& text) const
 
 	ImVec2 cur_size = { 0.0f, 0.0f };
 
+	if (!ImGui::GetIO().Fonts || ImGui::GetIO().Fonts->Fonts.Size == 0 || !ImGui::GetIO().Fonts->Fonts[0]) return text_size;
+
 	float font_size = m_fontSize == 0.0f ? ImGui::GetIO().Fonts->Fonts[0]->FontSize : m_fontSize;
 	const char* text_start = text.c_str();
 	const char* text_cur = text.c_str();
@@ -158,7 +163,7 @@ ImVec2 LabelImage::calculateTextSize(const std::string& text) const
 		{
 			if (text_cur != text_start)
 			{
-				// текст до колор-кода
+				// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅ
 				ImVec2 sz = calculateTextSize(text_start, text_cur);
 				cur_size.x += sz.x;
 				if (cur_size.y == 0.0f) cur_size.y = sz.y;
@@ -171,13 +176,13 @@ ImVec2 LabelImage::calculateTextSize(const std::string& text) const
 		{
 			if (text_cur != text_start)
 			{
-				// текст до \n
+				// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ \n
 				ImVec2 sz = calculateTextSize(text_start, text_cur);
 				cur_size.x += sz.x;
 				if (cur_size.y == 0.0f) cur_size.y = sz.y;
 			}
 
-			// обновляем text_size
+			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ text_size
 			text_size.x = ImMax(text_size.x, cur_size.x);
 			cur_size.y += font_size;
 			cur_size.x = 0.0f;
@@ -188,7 +193,7 @@ ImVec2 LabelImage::calculateTextSize(const std::string& text) const
 		{
 			if (text_cur != text_start)
 			{
-				// текст до \t
+				// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ \t
 				ImVec2 sz = calculateTextSize(text_start, text_cur);
 				cur_size.x += sz.x;
 				if (cur_size.y == 0.0f) cur_size.y = sz.y;
@@ -203,7 +208,7 @@ ImVec2 LabelImage::calculateTextSize(const std::string& text) const
 
 	if (text_cur != text_start)
 	{
-		// текст без форматирования
+		// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		ImVec2 sz = calculateTextSize(text_start, text_cur);
 		cur_size.x += sz.x;
 		if (cur_size.y == 0.0f) cur_size.y = sz.y;
@@ -215,6 +220,7 @@ ImVec2 LabelImage::calculateTextSize(const std::string& text) const
 
 ImVec2 LabelImage::calculateTextSize(const char* begin, const char* end) const
 {
+	if (!ImGui::GetIO().Fonts || ImGui::GetIO().Fonts->Fonts.Size == 0 || !ImGui::GetIO().Fonts->Fonts[0]) return { 0.0f, 0.0f };
 	ImFont* font = ImGui::GetIO().Fonts->Fonts[0];
 	return font->CalcTextSizeA(m_fontSize == 0.0f ? font->FontSize : m_fontSize, FLT_MAX, 0.0f, begin, end);
 }

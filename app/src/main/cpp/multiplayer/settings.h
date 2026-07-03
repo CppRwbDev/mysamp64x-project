@@ -57,9 +57,6 @@ struct stSettings
     int iFPSCount;
 
     bool iDialog;
-
-    // FPS info setting (добавляем)
-    bool bFPSInfo;
 };
 
 class CSettings

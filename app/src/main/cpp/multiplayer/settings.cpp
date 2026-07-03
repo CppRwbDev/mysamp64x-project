@@ -94,13 +94,9 @@ CSettings::CSettings()
     m_Settings.iSkyBox = reader.GetBoolean("gui", "skybox", false);
     m_Settings.iSnow = reader.GetBoolean("gui", "snow", false);
 
-    // FPS info setting (новое поле)
-    m_Settings.bFPSInfo = reader.GetBoolean("gui", "FPSInfo", true);
-
     FLog("Settings loaded.");
 }
 
-// Добавляем деструктор
 CSettings::~CSettings()
 {
     SaveSettings();
@@ -114,32 +110,16 @@ void CSettings::SaveSettings()
     CSimpleIniA ini;
     ini.SetUnicode(true);
 
-    // Загружаем существующий файл
     SI_Error rc = ini.LoadFile(buff);
     if (rc < 0) {
         FLog("Error loading settings file for saving");
         return;
     }
 
-    // Обновляем настройки
-    ini.SetBoolValue("gui", "fpsinfo", m_Settings.bFPSInfo);
-
-    // Сохраняем
     rc = ini.SaveFile(buff);
     if (rc < 0) {
         FLog("Error saving settings file");
     } else {
         FLog("Settings saved.");
     }
-}
-
-void CSettings::SetFPSInfo(bool enabled)
-{
-    m_Settings.bFPSInfo = enabled;
-    SaveSettings();
-}
-
-bool CSettings::GetFPSInfo() const
-{
-    return m_Settings.bFPSInfo;
 }

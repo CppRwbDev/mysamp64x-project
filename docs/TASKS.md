@@ -9,9 +9,9 @@
 - [x] Update default server IP in `Turan.h`.
 
 ## Active Tasks (Optimization Phase)
-- [/] **Streaming Buffer Optimization**: Tweak `CdStream` sectors and buffer sizes for smoother object loading.
-- [ ] **Thread Affinity Management**: Refine `CFPSFix` to target high-performance CPU cores.
-- [ ] **Dynamic Sync Rates**: Implement logic in `localplayer.cpp` to adjust network send frequency based on activity.
+- [x] **Streaming Buffer Optimization**: Increased `ms_memoryAvailable` to 512MB for smoother object loading.
+- [x] **Thread Affinity Management**: Updated `CFPSFix` to target high-performance CPU cores (Mask 0xF0).
+- [x] **Dynamic Sync Rates**: Implemented idle-detection logic in `localplayer.cpp` to reduce sync frequency when standing still.
 - [ ] **UI Redraw Caching**: Optimize ImGui rendering to reduce overhead when the HUD is static.
 
 ## Backlog / Future Roadmap
